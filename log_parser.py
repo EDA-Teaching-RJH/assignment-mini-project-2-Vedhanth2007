@@ -1,14 +1,6 @@
 import re
 
-logfile = open()
-#def check_ip():
-    #pattern = 
-    #inp = input("Enter ip")
-    #p4 = re.compile(pattern)
-    #if re.search(p4,inp):
-        #print("Valid IP")
-    #else:
-        #print("Invalid IP")
+pattern = 
 
 log_file = "server.log.txt"
 
@@ -25,3 +17,8 @@ class log_entry:
 
   def __repr__(self):
     return f"{self.timestamp}, {self.msg}"
+
+class analyze_logs:
+  checked_logs = []
+  for log in #####:
+    match = re.match()
