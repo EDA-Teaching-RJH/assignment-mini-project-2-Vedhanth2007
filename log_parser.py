@@ -16,3 +16,8 @@ with open(log_file, "a") as f:
 
 with open(log_file) as f:
   print(f.read())
+
+class log_entry:
+  def __init__(self,timestamp,msg):
+    self.timestamp = timestamp
+    self.msg = msg
