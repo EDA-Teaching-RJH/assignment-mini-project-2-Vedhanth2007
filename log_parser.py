@@ -1,5 +1,6 @@
 import re
 
+logfile = open()
 #def check_ip():
     #pattern = 
     #inp = input("Enter ip")
@@ -21,3 +22,6 @@ class log_entry:
   def __init__(self,timestamp,msg):
     self.timestamp = timestamp
     self.msg = msg
+
+  def __repr__(self):
+    return f"{self.timestamp}, {self.msg}"
