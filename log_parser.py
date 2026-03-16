@@ -1,4 +1,5 @@
 import re
+from log_entry import log_entry # check if this the right way to import
 
 class analyze_logs:
     
@@ -8,8 +9,17 @@ class analyze_logs:
         self.outputfile = outputfile
     
     def parsing(self):
-        inf = open("self.inputfile","r")
-        outf = open("self.outputfile","w")
+        with open(self.inputfile,"r") as inf, open(self.outputfile,"w") as outf:
+        
+            for line in inf:
+                match = re.search(r"\d{4}-\d{2}-\d{2}$/", line)
+                if match:
+                    groups = match.groups()
 
-        for line in inf:
-            if re.search("/^\d{4}-\d{2}-\d{2}$/",line):
+                    timestamp = groups[0]
+                    level = groups[1]
+                    message = groups[2]
+
+                    outf.write(timestamp)
+                    outf.write(level)
+                    outf.write(message)
