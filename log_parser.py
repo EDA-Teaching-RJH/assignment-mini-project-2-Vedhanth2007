@@ -12,7 +12,7 @@ class analyze_logs:
         with open(self.inputfile,"r") as inf, open(self.outputfile,"w") as outf:
         
             for line in inf:
-                match = re.search(r"\d{4}-\d{2}-\d{2}$/", line)
+                match = re.match(r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) (\w+) (\w+)', line) # can use re.search check how to use them
                 if match:
                     groups = match.groups()
 
