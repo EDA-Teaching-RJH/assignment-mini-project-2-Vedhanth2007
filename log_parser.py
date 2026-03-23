@@ -21,10 +21,6 @@ class analyze_logs:
                     level = groups[0]
                     message = groups[2]
 
-                    #outf.write(timestamp)
-                    #outf.write(level)
-                    #outf.write(message)
-                    #outf.write(f"{timestamp},{level},{message}\n")
 
                     if level != 'DEBUG':
                         outf.write(f"{timestamp},{level},{message}\n")
