@@ -10,7 +10,8 @@ class analyze_logs:
     
     
     def parsing(self):
-        
+        total = 0
+        error = 0
         with open(self.inputfile,"r") as inf, open(self.outputfile,"w") as outf, open("Errorfile.txt", "w") as e:
         
             for line in inf:
@@ -26,15 +27,21 @@ class analyze_logs:
                     if level == 'ERROR':
                         entry = Errorlogs(timestamp,level,message)
                         e.write(str(entry) + "\n")
+                        error = error + 1
                     else:
                         entry = log_entry(timestamp,level,message)
                     
                     
                     if level != 'DEBUG':
                         outf.write(str(entry) + "\n")
+                        total = total + 1
                         
                     else:
                         pass
+        
+            outf.write("\n~~~~~LOG SUMMARY~~~~~\n")
+            outf.write(f"Total logs: {total}\n")
+            outf.write(f"Total error log: {error}\n")
     
     def is_valid_logs(self,line):
         match = re.match(r'\[(\w+)\] (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}): (.*)', line)
@@ -42,4 +49,3 @@ class analyze_logs:
             return True
         else:
             return False
-
