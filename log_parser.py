@@ -8,8 +8,9 @@ class analyze_logs:
         self.inputfile = inputfile
         self.outputfile = outputfile
     
+    
     def parsing(self):
-        #clean_logs = []
+        
         with open(self.inputfile,"r") as inf, open(self.outputfile,"w") as outf, open("Errorfile.txt", "w") as e:
         
             for line in inf:
@@ -31,8 +32,14 @@ class analyze_logs:
                     
                     if level != 'DEBUG':
                         outf.write(str(entry) + "\n")
-                        #clean_logs.append(str(entry))
+                        
                     else:
                         pass
+    
+    def is_valid_logs(self,line):
+        match = re.match(r'\[(\w+)\] (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}): (.*)', line)
+        if match:
+            return True
+        else:
+            return False
 
-        #return clean_logs
