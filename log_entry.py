@@ -11,4 +11,7 @@ class log_entry:
 # child class of log entry
 class Errorlogs(log_entry):
     def is_error(self):
-        return self.level == "ERROR" # checks if the level is an "ERROR"
+        if self.level == "ERROR": # checks if the level is an "ERROR"
+            return True
+        else:
+            return False
