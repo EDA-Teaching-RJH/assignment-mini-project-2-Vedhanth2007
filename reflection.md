@@ -22,3 +22,6 @@ To add on top of existing abilities I made my program parse logs and if it found
 
 ## Conclusion
 Overall this project helped me learn and apply these concepts. I used concepts from lectures and other online media like youtube , w3school etc to help me with the syntax of my code.I used regex for matching patterns , File IO for storing data, assertation for testing and OOP for program structure. I had to overcome the challenge of OOP and how to use class across different python files using websites like geeksforgeeks ,w3school , stackoverflow and youtube. I also add extra functionality such data stats to prove my understanding of python and the project requirments. I was also planning to add a progress bar in my python code using the library `tqdm` but decided not to because it does not improve the functionality of the program. I was also using `__repr__` in log_entry but changed my mind because I read `__str__` is better for printing outputs.
+
+## Video link 
+I have also uploaded the video with the rest of the files incase the link does not work[Watch video here](https://drive.google.com/file/d/1RjYPAy7pLvJJfyeebt3RvctDLCimpSfB/view?usp=sharing)
