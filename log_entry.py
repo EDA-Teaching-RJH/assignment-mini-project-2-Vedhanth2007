@@ -1,5 +1,5 @@
 # class for log_entry
-class log_entry:
+class LogEntry:
     # initalises a log entry and puts them into different attributes
     def __init__(self,timestamp,level,message):
         self.timestamp = timestamp
@@ -9,7 +9,7 @@ class log_entry:
     def __str__(self):
         return f"{self.timestamp},{self.level},{self.message}"
 # child class of log entry
-class Errorlogs(log_entry):
+class Errorlogs(LogEntry):
     def is_error(self):
         if self.level == "ERROR": # checks if the level is an "ERROR"
             return True

@@ -1,7 +1,7 @@
 import re #imported regex
-from log_entry import log_entry,Errorlogs # imported log_entry and errorlogs from log_entry.py
+from log_entry import LogEntry,Errorlogs # imported log_entry and errorlogs from log_entry.py
 
-class analyze_logs: #class that processes log files
+class AnalyzeLogs: #class that processes log files
     
     # makes a path for the input and output file
     def __init__(self,inputfile,outputfile):
@@ -36,7 +36,7 @@ class analyze_logs: #class that processes log files
                         e.write(str(entry) + "\n")
                         error = error + 1
                     else:
-                        entry = log_entry(timestamp,level,message)
+                        entry = LogEntry(timestamp,level,message)
                     
                     # filters out any logs that are of the level "DEBUG" and increases count of total by one
                     if level != 'DEBUG':
