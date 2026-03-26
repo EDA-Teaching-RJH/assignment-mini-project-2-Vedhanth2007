@@ -1,6 +1,6 @@
 # class for log_entry
 class LogEntry:
-    # initalises a log entry and puts them into different attributes
+    # initalises a log entry and puts them into different parts
     def __init__(self,timestamp,level,message):
         self.timestamp = timestamp
         self.level = level 
